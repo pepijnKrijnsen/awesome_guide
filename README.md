@@ -22,8 +22,8 @@ make a condition false; any other value is 'truth-y' (including the number 0).
 `var = true` or `var = false`
 3.  **Number** is any integer or real (floating-point) number - Lua does not
 differentiate between the two.  
-n = 36  
-o = 3.14159
+`n = 36`  
+`o = 3.14159`
 4.  **String** is an immutable collection of 8-bit clean bytes.  
 `str = "Hello, world!"`
 
@@ -33,7 +33,7 @@ inferred (in which case Lua uses integers starting from 1). The values may be
 any value, including nil or other tables.  
 Tables are created (initiated) using curly braces:  
 `my_table = {}`  
-Values can be assigned at the point of creation, or afterwards, like this:
+Values can be assigned at the point of creation:
 ```
 my_table = {
     "A string",
@@ -96,17 +96,17 @@ require("awful.hotkeys_popup.keys")
 The `require()` function in Lua loads a module from a different file into the
 current file. The `pcall()` function is like a try/catch block in other
 languages: it allows the code to continue executing should the function being called
-inside `pcall()` return an error.
+inside `pcall()` return an error.  
 In the very first line (aside from the comments), Lua tries to `require()` (load
 the module) `luarocks.loader`. Since this call is wrapped inside `pcall()`, if
 the call to `require()` fails, rc.lua will continue executing as if nothing is
-wrong.
+wrong.  
 Libraries in Lua have funny names. 'gears' makes some sense - it's a module full
 of helper functions, like the gears in a clock making sure everything works -
-but what would something called 'awful' add to the program?
+but what would something called 'awful' add to the program?  
 All that these lines of code do, is assign the contents of modules (or rather,
 the return values of the result of executing those modules) to a variable inside
-rc.lua.
+rc.lua.  
 The only exception is the very last line, where `awful.hotkeys_popup.keys` is
 required but not assigned to any variable. This is because 'keys' is a table
 with references to some apps that get special hotkeys assigned to them in
@@ -150,12 +150,12 @@ it from loading normally. It populates the `startup_errors` field of the
 issues with the loaded config. It populates a notification to present the error
 to the user.
 3. AwesomeWM does not encounter any errors - `awesome.startup_errors` remains
-empty and `debug::error` does not trigger. Happy days!
+empty and `debug::error` does not trigger. Happy days!  
 Take one more look at the `awesome.connect_signal()` function. This is an
 example of rc.lua calling a function by indexing a table field, but it has one
 more party trick. The first argument passed to this function is just a string;
 but the second argument is another function, defined on-the-fly while calling
-`connect_signal()`!
+`connect_signal()`!  
 It's not necessary to understand exactly what is going on there - we would need
 to dissect the `awesome.connect_signal()` function to find out, and there's
 really no need to customise AwesomeWM's error notification logic. I just wanted
@@ -180,7 +180,7 @@ editor_cmd = terminal .. " -e " .. editor
 The preferred terminal is set to xterm by default, for no reason other than it
 is almost guaranteed to exist on the system. The config file tries to get the
 editor from the environment variable `EDITOR` or, if that doesn't exist, sets it
-to nano - a popular choice on many distros.
+to nano - a popular choice on many distros.  
 Finally, we define an editor_cmd which concatenates the terminal, the `-e` flag,
 and the editor. In the default case, this command would be `xterm -e nano`.
 ```
@@ -219,16 +219,16 @@ of the file, where we called `require()` a bunch of times to pull in various
 modules? One of those was 'awful', and here we're accessing some information
 from the module. `awful.layout.suit` contains references to various layouts,
 some of which can be further specified (such as the four shapes of 'tile'
-defined here).
+defined here).  
 Note the first line of this section after the comment. The open curly brace
 indicates that we're defining a table - the elements of the table are references
 to the layouts. The order in which these layouts are added to the table defines
-their order in Awesome.
+their order in Awesome.  
 The easiest way to understand how each layout works is by simply spawning a few
 terminal windows (hit `super` + `enter` five times) and then cycling through the
 layouts. The default hotkey is `super` + `space` (add `shift` to cycle
 backwards), or you can click the layout icon in the top right corner
-(right-click to cycle backwards).
+(right-click to cycle backwards).  
 You can comment out any layouts that you don't intend on using, possibly after
 using Awesome for a while and finding out which you prefer.
 
@@ -251,12 +251,23 @@ mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesom
 
 mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon,
                                      menu = mymainmenu })
-```
-The comment is the wrong way around - first we create a submenu, then a main
-menu, and finally the launcher widget.
-The submenu is a table of tables assigned to the 'myawesomemenu' name.
+
 -- Menubar configuration
 menubar.utils.terminal = terminal -- Set the terminal for applications that require it
 -- }}}
 ```
-
+The comment is the wrong way around - first we create a submenu, then a main
+menu, and finally the launcher widget.  
+The submenu is a table of tables assigned to the 'myawesomemenu' name. Each
+inner table contains two fields: a string representing the name of the menu
+item, and a command or function to execute when that option is clicked.  
+The variable `mymainmenu` is then instantiated to contain the return value of a
+call to `awful.menu()`. What are we passing to `awful.menu`? It looks
+complicated, but in the end we're passing a single table which has a single
+element: another table called 'items', which has as ITS elements the menu that
+we created previously and an option to open the terminal.  
+On the last line, the variable `mylauncher` is instantiated to contain the
+return value of the `awful.widget.launcher()` function. All we're passing to
+this function is the icon we want the launcher to have, and the menu that
+should be opened when the launcher is clicked. (Adding the launcher to the bar
+at the top of the screen is taken care of at a later stage.)
