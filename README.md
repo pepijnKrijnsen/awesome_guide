@@ -1,4 +1,4 @@
-#The Awesome Guide
+# The Awesome Guide
 
 The default rc.lua file is well commented, but AwesomeWM has some
 inconsistencies that may make it difficult to read for new users. Learning the
@@ -6,7 +6,7 @@ basics is a great way of understanding more complicated concepts later.
 I think it will be helpful to briefly highlight some common Lua patters found in
 rc.lua, for those unfamiliar with the language. So let's start with that!
 
-##Some notes on Lua
+## Some notes on Lua
 **Comments** in Lua start with two dashes `--`. These may appear at the start of
 a line or anywhere along a line.
 The **local** keyword is a way to limit the scope of a variable or function.
@@ -69,7 +69,7 @@ functions such as `print()` or `require()`, it will be indexing some table.
 
 Now, let's go over rc.lua section by section!
 
-##Loading the standard library
+## Loading the standard library
 ```
 -- If LuaRocks is installed, make sure that packages installed through it are
 -- found (e.g. lgi). If LuaRocks is not installed, do nothing.
@@ -111,7 +111,7 @@ with references to some apps that get special hotkeys assigned to them in
 AwesomeWM. The table with those references can be made available directly,
 instead of assigning it to a variable.
 
-##Error handling
+## Error handling
 ```
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
@@ -159,7 +159,7 @@ to dissect the `awesome.connect_signal()` function to find out, and there's
 really no need to customise AwesomeWM's error notification logic. I just wanted
 to highlight this beautiful feature of the language.
 
-##Variable definitions
+## Variable definitions
 ```
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
@@ -230,7 +230,7 @@ backwards), or you can click the layout icon in the top right corner
 You can comment out any layouts that you don't intend on using, possibly after
 using Awesome for a while and finding out which you prefer.
 
-##Menu
+## Menu
 ```
 -- {{{ Menu
 -- Create a launcher widget and a main menu
