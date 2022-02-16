@@ -1,8 +1,8 @@
 # An Awesome Guide
 
-The default rc.lua file is well commented, but AwesomeWM has some
-inconsistencies that may make it difficult to read for new users. Learning the
-basics is a great way of understanding more complicated concepts later.
+The default rc.lua file is well commented, but it may still be difficult to
+read for new users. Learning the basics is a great way of understanding more
+complicated concepts later.
 
 I've been using Awesome for a year or two on and off. In that time I have tried
 adding some of my own functionality. As long as I was making minor edits to the
