@@ -24,14 +24,13 @@ mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesom
 Just by reading the lines `"hotkeys", function() hotkeys_popup.show_help...`
 and `"manual", terminal .. " -e man awesome"...` we can understand that here
 we're defining some sort of menu. This becomes especially obvious when we click
-the Awesome menu icon in the top right and see the same options in the first
+the Awesome menu icon in the top left corner and see the same options in the first
 submenu there. However, this doesn't mean that we can now go in and edit the
 menu to our liking. What if you want to expand the main menu, rather than the
 submenu? Where do you go? How do you understand the syntax error you get when
 you forget to deliminate table entries correctly? *What even is a table!?*
 
-We won't be diving into the bowels of the Lua API for this guide - we're
-limiting ourselves to only the rc.lua for now - but we will be looking very
+We won't be diving into the bowels of the Lua API for this guide, but we will be looking very
 closely at what exactly is being defined or called, and how.
 
 Let's get started!
