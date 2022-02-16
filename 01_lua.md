@@ -5,7 +5,7 @@ The **local** keyword is a way to limit the scope of a variable or function.
 You can ignore its exact meaning for now, but it may be helpful to realise that
 whenever you see `local` it means we're defining a variable.
 
-Lua doesn't have manu data types:
+Lua doesn't have many data types:
 1.  **Nil** typically indicates the absence of any useful value. Setting a
 variable to equal nil is effectively the same as deleting the variable.
 `var = nil`
@@ -60,5 +60,13 @@ table.greet()  -- prints "Hello, world!"
 You will see this structure and syntax a lot all throughout rc.lua. Whenever
 AwesomeWM needs to call one of its own functions, as opposed to builtin
 functions such as `print()` or `require()`, it will be indexing some table.
+
+### Helpful sources
+(The Lua 5.3 reference
+manual)[https://www.lua.org/manual/5.3/contents.html#contents] - don't worry
+if your copy of Awesome is built against a later version of Lua! All of the
+manual still applies.  
+(Learn Lua in one video)[https://youtu.be/iMacxZQMPXs] by Derek Banas covers
+all of Lua's basic functionality in under one hour
 
 Let's go over rc.lua section by section in the next chapter.
