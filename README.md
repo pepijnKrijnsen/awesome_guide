@@ -17,14 +17,14 @@ I hope my experience and ongoing path to Awesome competence (I wouldn't call it
 mastery at this point) will be helpful to other people.
 
 The document structure, subject to change:
-1.      Lua  -  a brief overview of basic Lua features and conventions found in rc.lua
-2.		The default rc.lua
-2.1     Loading the library and defining variables
-2.2     Creating the menu and other panel widgets
-2.3     Wallpaper functions
-2.4     Populate the screens
-2.5     Mouse & key bindings
-2.6     Rules
-2.7     Signals
-3.      Making simple changes
-3.1     TBD!
+1. Lua  -  a brief overview of basic Lua features and conventions found in rc.lua
+2. The default rc.lua
+2.1 Loading the library and defining variables
+2.2 Creating the menu and other panel widgets
+2.3 Wallpaper functions
+2.4 Populate the screens
+2.5 Mouse & key bindings
+2.6 Rules
+2.7 Signals
+3. Making simple changes
+3.1 TBD!
