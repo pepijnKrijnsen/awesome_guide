@@ -17,13 +17,13 @@ I hope my experience and ongoing path to Awesome competence (I wouldn't call it
 mastery at this point) will be helpful to other people.
 
 The document structure, subject to change:
-1. (Lua)[https://github.com/pepijnKrijnsen/awesome_guide/blob/main/01_lua.md]
+1. [Lua](https://github.com/pepijnKrijnsen/awesome_guide/blob/main/01_lua.md)
 -  a brief overview of basic Lua features and conventions found in rc.lua  
 2. The default rc.lua  
-2.1 (Loading the library and defining
-variables)[https://github.com/pepijnKrijnsen/awesome_guide/blob/main/02-1_library-and-variable-definitions.md]  
-2.2 (Creating the menu and other panel
-widgets)[https://github.com/pepijnKrijnsen/awesome_guide/blob/main/02-2_menu.md]  
+2.1 [Loading the library and defining
+variables](https://github.com/pepijnKrijnsen/awesome_guide/blob/main/02-1_library-and-variable-definitions.md)  
+2.2 [Creating the menu and other panel
+widgets](https://github.com/pepijnKrijnsen/awesome_guide/blob/main/02-2_menu.md)  
 2.3 Wallpaper functions  
 2.4 Populate the screens  
 2.5 Mouse & key bindings  
